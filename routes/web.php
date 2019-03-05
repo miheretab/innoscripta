@@ -11,4 +11,8 @@
 |
 */
 
-Route::get('/', 'CompaniesController@bills')->name('home');
+Route::get('/', 'BillsController@index')->name('home');
+Route::get('companies/add', function () {
+    return view('companies.add');
+});
+

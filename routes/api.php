@@ -23,7 +23,7 @@ use App\Http\Resources\Bill as BillResource;
 
 //company routes
 Route::get('companies', function () {
-    return CompanyResource::collection(Company::paginate(25));
+    return CompanyResource::collection(Company::paginate(15));
 });
 
 Route::get('companies/{id}', function ($id) {
@@ -49,7 +49,7 @@ Route::delete('companies/{id}', function($id) {
 
 //bill routes
 Route::get('bills/{companyId}', function ($companyId) {
-    return BillResource::collection(Bill::where(['company_ID' => $companyId])->paginate(25));
+    return BillResource::collection(Bill::where(['company_ID' => $companyId])->paginate(15));
 });
 
 Route::get('bills/edit/{id}', function ($id) {
