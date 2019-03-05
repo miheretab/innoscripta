@@ -13,13 +13,13 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="{{URL::to('/css/app.css')}}">
+        <link rel="stylesheet" href="{{url('css/app.css')}}">
 
     </head>
     <body>
         <div class="container mt-sm-5">
             @yield('content')
         </div>
-        <script src="{{ URL::to('/js/app.js') }}"></script>
+        <script src="{{ url('js/app.js') }}"></script>
     </body>
 </html>

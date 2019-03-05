@@ -5,7 +5,7 @@
 @section('content')
 <div class="row">
     <div class="col-md-12">
-        <a href="{{URL::to('companies/add')}}" class="btn btn-primary mb-sm-2">Add Company/Bills</a>
+        <a href="{{url('companies/add')}}" class="btn btn-primary mb-sm-2">Add Company/Bills</a>
         <form class="form-inline float-right">
             <select class="form-control mr-sm-1" name="month" id="month" onchange="location.href = '/?keyword=' + $('#keyword').val() + '&month=' + $(this).val() + '&year=' + $('#year').val();">
                 <option value=''>All Months</option>
@@ -41,8 +41,8 @@
             @if($bill->company)
             <tr>
                 <td>
-                    <a href="{{URL::to('bills/edit/' . $bill->id)}}" class=""><span class="fa fa-edit fa-2x"></span></a>
-                    <a href="{{URL::to('bills/delete/' . $bill->id)}}" class=""><span class="fa fa-times-circle fa-2x"></span></a>
+                    <a href="{{url('bills/edit/' . $bill->id)}}" class=""><span class="fa fa-edit fa-2x"></span></a>
+                    <a href="{{url('bills/delete/' . $bill->id)}}" class=""><span class="fa fa-times-circle fa-2x"></span></a>
                 </td>
                 <td>{{$bill->formattedDate}}</td>
                 <td>{{$bill->company->name}} <br> <small>{{$bill->company->id}}</small></td>
