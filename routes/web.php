@@ -11,4 +11,4 @@
 |
 */
 
-Route::get('/', 'CompaniesController@index')->name('home');
+Route::get('/', 'CompaniesController@bills')->name('home');

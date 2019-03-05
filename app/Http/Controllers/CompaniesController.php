@@ -8,8 +8,8 @@ use App\Bill;
 
 class CompaniesController extends Controller
 {
-    public function index() {
-        $companies = Company::all();
-        return view('companies.index', compact('companies'));
+    public function bills() {
+        $bills = Bill::paginate(25);
+        return view('companies.bills', compact('bills'));
     }
 }
