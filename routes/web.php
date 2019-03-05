@@ -10,8 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-var_dump(env('APP_ENV'));
-if (env('APP_ENV') === 'production') {
+
+if (env('APP_ENV') != 'local') {
     URL::forceScheme('https');
 }
 
