@@ -1,5 +1,11 @@
 var lastBillNumber = 1;
 
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+
 $('body').on('focus', '.bill-date', function() {
     $(this).datepicker({
         uiLibrary: 'bootstrap4',

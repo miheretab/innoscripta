@@ -85,7 +85,6 @@
 function save(url) {
     if(checkMaxFee()) {
         var data = {
-            _token: '{{csrf_token()}}',
             name: $('#company-name').val(),
             referenceNr: $('#company-number').val(),
             street: $('#street').val(),
