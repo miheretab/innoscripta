@@ -31,7 +31,16 @@ Route::get('companies/{id}', function ($id) {
 });
 
 Route::post('companies', function(Request $request) {
-    return Company::create($request->all());
+    $validator = \Validator::make($request->all(), [
+        'name' => 'required',
+        'referenceNr' => 'required'
+    ]);
+    
+    if ($validator->fails()) {
+        return response()->json(['errors'=>$validator->errors()->all()]);
+    }
+    $company = Company::create($request->all());
+    return $company;
 });
 
 Route::put('companies/{id}', function(Request $request, $id) {

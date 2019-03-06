@@ -17,7 +17,9 @@ class Company extends JsonResource
         $company = [
             'id' => $this->id,
             'name' => $this->name,
-            'amount' => $this->belingsum,
+            'referenceNr' => $this->referenceNr,
+            'amount' => $this->formattedAmount,
+            'fee' => $this->formatedFee,
             'address' => [
                 'country' => $this->country,
                 'state' => $this->state,

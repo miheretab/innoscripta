@@ -35,4 +35,9 @@ class BillsController extends Controller
 
         return view('bills.index', compact('bills'));
     }
+
+    public function destroy($id) {
+        Bill::findOrFail($id)->delete();
+        return back()->with('success', trans('message.deleteSuccess'));
+    }
 }

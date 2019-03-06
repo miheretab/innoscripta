@@ -15,12 +15,14 @@ class Company extends Model
      */
     protected $fillable = [
         'name',
-        'belingsum',
+        'funding',
+        'fee',
         'country',
         'state',
         'city',
         'street',
-        'code'
+        'code',
+        'referenceNr'
     ];
 
     public static function boot() {
@@ -39,4 +41,12 @@ class Company extends Model
         return $this->hasMany('App\Bill', 'company_ID');
     }
 
+    public function getFormattedAmountAttribute() {
+        return number_format($this->funding, 2) . ' €';
+    }
+
+
+    public function getFormattedFeeAttribute() {
+        return number_format($this->fee, 2) . '%';
+    }
 }

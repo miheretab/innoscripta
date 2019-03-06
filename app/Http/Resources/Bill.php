@@ -19,7 +19,8 @@ class Bill extends JsonResource
             'billNumber' => $this->billNumber,
             'amount' => $this->formattedAmount,
             'companyId' => $this->company->id,
-            'companyName' => $this->company->name
+            'companyName' => $this->company->name,
+            'referenceNr' => $this->company->referenceNr
         ];
     }
 }
