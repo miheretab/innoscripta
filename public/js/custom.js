@@ -10,6 +10,7 @@ $('body').on('focus', '.bill-date', function() {
 function loadUrl(url) {
     $('#add-modal .modal-content').load(url, function() {
         calcFeeAmount();
+        $('#add-modal').modal('show');
     });
 }
 

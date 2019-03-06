@@ -12,7 +12,7 @@
     @endif
 
     <div class="col-md-12">
-        <a href="{{url('companies/add')}}" data-toggle="modal" data-target="#add-modal" onclick="loadUrl($(this).attr('href'));" class="btn btn-primary mb-sm-2">Add Company/Bills</a>
+        <a href="{{url('companies/add')}}" data-toggle="modal" onclick="loadUrl($(this).attr('href'));" class="btn btn-primary mb-sm-2">Add Company/Bills</a>
         <form class="form-inline float-right">
             <select class="form-control mr-sm-1" name="month" id="month" onchange="location.href = '/?keyword=' + $('#keyword').val() + '&month=' + $(this).val() + '&year=' + $('#year').val();">
                 <option value=''>All Months</option>
@@ -48,7 +48,7 @@
             @if($bill->company)
             <tr>
                 <td>
-                    <a href="{{url('/companies/edit/' . $bill->company->id)}}" data-toggle="modal" data-target="#add-modal" onclick="loadUrl($(this).attr('href'));"><span class="fa fa-edit fa-2x float-left"></span></a>
+                    <a href="{{url('/companies/edit/' . $bill->company->id)}}" data-toggle="modal" onclick="loadUrl($(this).attr('href'));"><span class="fa fa-edit fa-2x float-left"></span></a>
                     <form method="post" action='{{url("bills/delete/" . $bill->id)}}' id="formDelete{{$bill->id}}" class="form-inline float-left">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
